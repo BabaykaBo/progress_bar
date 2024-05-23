@@ -1,11 +1,15 @@
 package dev.oleh.progress
 
 @main def main(): Unit =
-  def bar(factor: Int): Unit =
-    printProgressBar(Style.random(), factor)
+  val generateRandomStyle: () => String =
+    Style.makePseudoRandomGenerator()
 
-  for factor <- 1 to 4 do bar(factor)
-  for factor <- 4 to 1 by -1 do bar(factor)
+  def bar(factor: Int): Unit =
+    printProgressBar(generateRandomStyle(), factor)
+
+  for factor <- 1 to 5 do bar(factor)
+  // for factor <- 4 to 1 by -1 do bar(factor)
+end main
 
 def printProgressBar(style: String, factor: Int): Unit =
   val renderProgressBar: ProgressBar = ProgressBar.make(factor)
