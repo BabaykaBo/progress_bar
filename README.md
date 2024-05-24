@@ -1,4 +1,4 @@
-## sbt project compiled with Scala 3
+## Scala 3 Progress Bars
 
 ## Description
 
