@@ -8,7 +8,14 @@ package dev.oleh.progress
     printProgressBar(generateRandomStyle(), factor)
 
   for factor <- 1 to 5 do bar(factor)
-  // for factor <- 4 to 1 by -1 do bar(factor)
+  for factor <- 5 to 1 by -1 do bar(factor)
+
+  def circle(): Unit =
+    printProgressCircle(generateRandomStyle())
+
+  for _ <- 1 to 8 do circle()
+  clearPrint()
+
 end main
 
 def printProgressBar(style: String, factor: Int): Unit =
@@ -33,3 +40,14 @@ def clearPrint(in: Any = ""): Unit =
 extension (self: Any)
   infix def in(style: String): String =
     style + self + Console.RESET
+
+def printProgressCircle(style: String): Unit =
+  val renderCircle = ProgressCircleSegment.make()
+
+  for _ <- 1 to 6 do
+    val segment = renderCircle()
+    val styledSegment = segment in style
+
+    clearPrint(styledSegment)
+    Thread.sleep(100)
+end printProgressCircle
