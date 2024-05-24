@@ -8,7 +8,9 @@ object Style:
   def makePseudoRandomGenerator(): InfiniteNext[String] =
     InfiniteNext(All)
 
-  final lazy val All: IndexedSeq[String] =
+  final lazy val All: NonEmptyIndexSeq[String] =
     import Console.*
-    IndexedSeq(BLACK, BLUE, CYAN, GREEN, MAGENTA, RED, WHITE, YELLOW)
+    NonEmptyIndexSeq.unsafe(
+      IndexedSeq(BLACK, BLUE, CYAN, GREEN, MAGENTA, RED, WHITE, YELLOW)
+    )
 end Style

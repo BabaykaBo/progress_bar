@@ -1,6 +1,6 @@
 package dev.oleh.progress
 
-class InfiniteNext[A](self: IndexedSeq[A]) extends (() => A):
+class InfiniteNext[A](self: NonEmptyIndexSeq[A]) extends (() => A):
   override def apply(): A =
     val result = self(index)
 
