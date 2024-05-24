@@ -6,9 +6,9 @@ This is Scala project for generating some progress bars.
 
 ## Dependencies
 
-Scala - 3.4.1
-JDK - 11.0.2
-Fira Code - for progress bars displaying
+- Scala - 3.4.1
+- JDK - 11.0.2
+- Fira Code - for progress bars displaying
 
 ## Libraries
 
